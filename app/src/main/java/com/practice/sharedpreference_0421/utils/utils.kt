@@ -8,6 +8,7 @@ class ContextUtil{
 
         val prefName = "MyPref" //메모장의 파일명에 대응되는 개념 / 프로젝트에맞는이름
         val USER_ID = "USER_ID" //메모장에저장될항목의 이름
+        val ID_SAVE = "ID_SAVE"
 
 
         // setter 라는 저장용 함수
@@ -26,6 +27,19 @@ class ContextUtil{
     return pref.getString(USER_ID, "")!!
 
 }
+
+        // 자동로그인 저장해놓기
+        fun setSaveId(context: Context, isSave : Boolean){
+            val pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
+            pref.edit().putBoolean(ID_SAVE, isSave).apply()
+        }
+        fun getSaveId(context: Context) : Boolean{
+            val pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
+            return pref.getBoolean(ID_SAVE,false)!!
+
+        }
+
+
 
 
     }

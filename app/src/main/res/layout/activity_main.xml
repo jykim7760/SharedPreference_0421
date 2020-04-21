@@ -29,6 +29,7 @@ android:text="아이디"/>
         />
 
     <CheckBox
+        android:id="@+id/idSaveCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="아이디저장"/>
